@@ -1,4 +1,4 @@
-const apiKey = import.meta.env.VITE_API_KEY;
+const apiKey = process.env.API_KEY;
 let unit = 'metric';
 let lastCity = ''; // Track the last searched city
 
