@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="weather-app">
+  <div class="main-content">
+    <div class="search-bar">
+      <input type="text" id="city-input" placeholder="Search for cities" autocomplete="off">
+      <button onclick="getWeather()">Search</button>
+      <button onclick="getWeatherForCurrentLocation()">Current Location</button>
+      <div class="unit-toggle">
+        <button id="unit-toggle-btn">Switch to Fahrenheit</button>
+      </div>
+    </div>
+
+    <div class="current-weather">
+      <h2 id="city-name">City</h2>
+      <p id="chance-of-rain">Chance of rain: 0%</p>
+      <div class="temperature">
+        <span id="current-temp">31°</span>
+        <img id="weather-icon" src="" alt="Weather Icon">
+      </div>
+    </div>
+
+    <div class="today-forecast">
+      <h3>Today's Forecast</h3>
+      <div id="today-forecast-list">
+        <!-- Hourly forecast will be added here dynamically -->
+      </div>
+    </div>
+
+    <div class="air-conditions">
+      <div>
+        <span>Real Feel</span>
+        <span id="real-feel" class="value">30°</span>
+      </div>
+      <div>
+        <span>Wind</span>
+        <span id="wind-speed" class="value">0.2 km/h</span>
+      </div>
+      <div>
+        <span>Chance of rain</span>
+        <span id="rain-chance" class="value">0%</span>
+      </div>
+      <div>
+        <span>Humidity</span>
+        <span id="humidity" class="value">50%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="weekly-forecast">
+    <h3>5-Day Forecast</h3>
+    <div class="weekly-forecast-list" id="weekly-forecast-list">
+      <!-- 7-day forecast will be added here dynamically -->
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+/* styles.css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #1e1e30;
+  color: #ffffff;
+  margin: 0;
+  padding: 15px 0 15px 0;
+}
+
+/* Базовые стили для weather app */
+.weather-app {
+  background: #2c2c3e;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: row; /* Располагаем main-content и weekly-forecast горизонтально */
+  width: 80%; /* занимает 80% ширины экрана */
+  max-width: 1200px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.main-content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+}
+
+.search-bar input, .search-bar button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+.search-bar input {
+  flex: 1;
+  background-color: #3c3c4e;
+  color: #ffffff;
+}
+
+.search-bar button {
+  background-color: #5c5ce6;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.current-weather, .today-forecast, .air-conditions, .weekly-forecast {
+  background: #3c3c4e;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.current-weather {
+  text-align: center;
+}
+
+.temperature {
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.today-forecast, .weekly-forecast {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#today-forecast-list, #weekly-forecast-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.today-forecast div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weekly-forecast {
+  flex: 1;
+  margin-left: 20px; /* отступ слева от основного контента */
+}
+
+.weekly-forecast div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.air-conditions {
+  background: #3c3c4e;
+  padding: 20px;
+  border-radius: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Две колонки одинаковой ширины */
+  gap: 10px; /* Отступы между элементами */
+}
+
+.air-conditions div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.air-conditions div span {
+  font-size: 14px; /* Размер текста для метки (Real Feel, Wind, и т.д.) */
+  color: #b0b0b5; /* Светлый цвет для метки */
+}
+
+.air-conditions div .value {
+  font-size: 24px; /* Увеличенный размер для значений (температура, влажность и т.д.) */
+  font-weight: bold;
+  color: #ffffff; /* Белый цвет для значений */
+}
+/* Адаптивный стиль для маленьких экранов */
+@media (max-width: 768px) {
+  .weather-app {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center elements */
+  }
+  .main-content,.weekly-forecast {
+    width: 100%; /* Set full width to fit within container */
+    margin-left: 0; /* Remove left margin */
+  }
+}
+@media (max-width: 426px) {
+  .today-forecast div{
+    flex-direction: row;
+  }
+}
+/* Дополнительно, ширина может адаптироваться на более широких экранах */
+@media (max-width: 1200px) {
+  .weather-app {
+    width: 90%; /* Изменяем ширину weather-app */
+  }
+}
