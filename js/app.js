@@ -1,4 +1,4 @@
-const apiKey = process.env.API_KEY;
+const apiKey = '1452715add185b42d73ba427edf8605d';
 let unit = 'metric';
 let lastCity = ''; // Track the last searched city
 
